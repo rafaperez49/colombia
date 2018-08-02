@@ -1,0 +1,35 @@
+pipeline
+{
+	agent any
+	
+	stages{
+	    
+	    stage('Poner al día el Repositorio'){
+	    	
+	        steps{
+	        	git url: 'https://github.com/rafaperez49/colombia.git', credentialsId: 'rafaperez49', branch: 'master'
+	        }
+
+	        
+	    }
+	    
+	    
+	    stage('Lanzando la prueba'){
+	    	
+	        steps{
+	        	withMaven(maven:'apache-maven-3.5.3')
+	        	{
+	        		bat "mvn -Dtest=\"${APLICACION}\" test"
+	        	
+	        	}    
+	        }
+
+	        
+	    }
+
+	    
+	}
+
+
+
+}
