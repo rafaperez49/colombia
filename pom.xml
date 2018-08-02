@@ -42,7 +42,7 @@
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-core</artifactId>
             <version>${serenity.version}</version>
-            <scope>test</scope>
+            
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
@@ -54,13 +54,13 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.7</version>
-            <scope>test</scope>
+            
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
-            <scope>test</scope>
+            
         </dependency>
         <dependency>
 		   <groupId>org.apache.poi</groupId>
@@ -83,12 +83,6 @@
         
     </dependencies>
     <build>
-    <resources>
-    	<resource>
-    		<directory>src</directory>
-    	</resource>
-    </resources>
-    
     
         <plugins>
             <plugin>
