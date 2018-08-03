@@ -8,10 +8,6 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import net.serenitybdd.screenplay.actions.selectactions.SelectByValueFromTarget;
-import net.serenitybdd.screenplay.actions.selectactions.SelectByVisibleTextFromElement;
-import net.serenitybdd.screenplay.actions.selectactions.SelectByVisibleTextFromTarget;
-import net.serenitybdd.screenplay.conditions.Check;
 
 public class Diligenciamiento implements Task{
 
