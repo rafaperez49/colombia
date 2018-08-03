@@ -31,6 +31,17 @@ pipeline
 
 	        
 	    }
+	    
+	    stage('Generar reporte')
+	    {
+	    	steps{
+	    		withMaven(maven:'apache-maven-3.5.3'){
+	    		  	bat "mvn serenity:aggregate "  
+	    		}
+
+	    	}
+	    }
+	    
 
 	    
 	}
