@@ -87,11 +87,7 @@
      
     <sourceDirectory>src/test/java</sourceDirectory>
     <testSourceDirectory>src/main/java</testSourceDirectory>
-    <testResources>
-      <testResource>
-        <directory>src/test/resources</directory>
-      </testResource>
-    </testResources>
+   
     
         <plugins>
             <plugin>
