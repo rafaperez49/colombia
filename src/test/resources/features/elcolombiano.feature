@@ -9,7 +9,6 @@ Feature: Title of your feature
     Given Rafa quiere leer las noticias
     When Rafa se registra en la pagina de el colombiano
     |<email>|	<confirmar_email> | <password> | <confirmar_password> | <usuario> | <nombres> | <apellidos> | <tipoDcto> | <numDcto> | <fechaCumple> | <genero> | <movil> | <fijo> | <direccion> | <pais> | <educacion> | <departamento> | <ocupacion> | <ciudad>|
-    Then verifica que ingresó exitosamente viendo en pantalla
     
     Examples:
     |email|	confirmar_email | password | confirmar_password | usuario | nombres | apellidos | tipoDcto | numDcto | fechaCumple | genero | movil | fijo | direccion | pais | educacion | departamento | ocupacion | ciudad|
