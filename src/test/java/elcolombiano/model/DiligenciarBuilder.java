@@ -8,7 +8,7 @@ public class DiligenciarBuilder {
 	
 	
 
-	public Diligenciamiento con(List<List<String>> laInformacionDeRegistro) {
+	public Diligenciamiento con(List<UsuarioColombiano> laInformacionDeRegistro) {
 		return new Diligenciamiento(laInformacionDeRegistro);
 	}
 	
