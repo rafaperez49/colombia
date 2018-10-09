@@ -8,8 +8,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import net.serenitybdd.screenplay.conditions.Check;
 
 public class Diligenciamiento implements Task{
 
@@ -41,10 +39,15 @@ public class Diligenciamiento implements Task{
 //		actor.attemptsTo(Enter.theValue( tablaInfo.get(0).get(9).toString().trim()  ).into(ElColombianoPage.FECHA_NACIMIENTO));
 //		//actor.attemptsTo(Enter.theValue( tablaInfo.get(0).get(10).toString().trim()  ).into(ElColombianoPage.GENERO));
 //		
-		 actor.attemptsTo(Check.whether(tablaInfo.get(0).getGenero().toString().trim().equals("Masculino")).
-				 andIfSo(Click.on(ElColombianoPage.GENERO_MASCULINO)).
-				 otherwise(Click.on(ElColombianoPage.GENERO_FEMENINO)));
+//		 actor.attemptsTo(Check.whether(tablaInfo.get(0).getGenero().toString().trim().equals("Masculino")).
+//				 andIfSo(Click.on(ElColombianoPage.GENERO_MASCULINO), 
+//						 Click.on(ElColombianoPage.GENERO_FEMENINO),
+//						 Click.on(ElColombianoPage.GENERO_MASCULINO
+//						 )).
+//				 otherwise(Click.on(ElColombianoPage.GENERO_FEMENINO)));
 		 
+		//actor.can(BrowseTheWeb.as(actor).evaluateJavascript("arguments[0].click()",ElColombianoPage.GENERO_FEMENINO.resolveFor(actor) ));  
+		
 //		 
 //		if(tablaInfo.get(0).getGenero().toString().trim().equals("Masculino"))
 //			actor.attemptsTo(Click.on(ElColombianoPage.GENERO_MASCULINO));
