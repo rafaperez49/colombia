@@ -1,8 +1,8 @@
 package elcolombiano.stepsdefinition;
 
-import java.util.List;
+import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 
-import org.openqa.selenium.WebDriver;
+import java.util.List;
 
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -11,38 +11,24 @@ import cucumber.api.java.en.When;
 import elcolombiano.model.Diligenciar;
 import elcolombiano.model.UsuarioColombiano;
 import elcolombiano.task.Ingresar;
-import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
-import net.thucydides.core.annotations.Managed;
+import net.serenitybdd.screenplay.actors.OnStage;
+import net.serenitybdd.screenplay.actors.OnlineCast;
 
 public class ElColombianoDefinition {
 	
-	@Managed(driver="chrome")
-	private WebDriver suNavegador;
-	
-	private Actor rafa = Actor.named("Rafa");
-	
 	@Before
-	public void configuracionPrevia()
-	{
-		rafa.can(BrowseTheWeb.with(suNavegador));
-	}
-	
-	
-	@Given("^Rafa quiere leer las noticias$")
-	public void rafaQuiereLeerLasNoticias(){
-		
-		
-		rafa.wasAbleTo(Ingresar.alColombiano());
-		
+	public void configuracionPrevia(){
+		OnStage.setTheStage(new OnlineCast());
 	}
 
+	@Given("^(.*) quiere leer las noticias$")
+	public void rafaQuiereLeerLasNoticias(String rafa){		
+		theActorCalled(rafa).wasAbleTo(Ingresar.alColombiano());	
+	}
 
-	@When("^Rafa se registra en la pagina de el colombiano$")
-	public void rafaSeRegistraEnLaPaginaDeElColombiano(List<UsuarioColombiano> laTabla){
-				
-		rafa.attemptsTo(Diligenciar.elFormulario().con(laTabla));
-		
+	@When("^(.*) se registra en la pagina de el colombiano$")
+	public void rafaSeRegistraEnLaPaginaDeElColombiano(String rafa, List<UsuarioColombiano> laTabla){			
+		theActorCalled(rafa).attemptsTo(Diligenciar.elFormulario().con(laTabla));
 	}
 
 	@Then("^verifica que ingresó exitosamente viendo en pantalla (.*)$")
