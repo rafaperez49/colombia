@@ -11,7 +11,7 @@ import cucumber.api.SnippetType;
 
 @CucumberOptions (features = "src/test/resources/features/elcolombiano.feature",
 				  tags= {"@registro"},
-				  glue="elcolombiano.stepsdefinition",
+				  glue= {"elcolombiano.model", "elcolombiano.stepsdefinition"}, 
 				  snippets= SnippetType.CAMELCASE)
 @RunWith(RunnerPersonalizado.class)
 public class RunnerTags {

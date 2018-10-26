@@ -1,22 +1,16 @@
 package elcolombiano.task;
 
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
-
 import java.util.List;
 
-import elcolombiano.exceptions.CampoNoVacioException;
 import elcolombiano.model.Nombres;
+import elcolombiano.model.Posicion;
 import elcolombiano.model.UsuarioColombiano;
 import elcolombiano.ui.ElColombianoPage;
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.conditions.Check;
-import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
-import net.serenitybdd.screenplay.questions.WebElementQuestion;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class Diligenciamiento implements Task{
 
@@ -30,10 +24,9 @@ public class Diligenciamiento implements Task{
 
 	@Override
 	public <T extends Actor> void performAs(T actor) {
+	
 		//actor.attemptsTo(Enter.theValue( tablaInfo.get(0).getEmail().trim() ).into(ElColombianoPage.EMAIL));
-		
-		actor.should(GivenWhenThen.seeThat(WebElementQuestion.the(ElColombianoPage.EMAIL), WebElementStateMatchers.containsText("Hola")).orComplainWith(CampoNoVacioException.class, "El campo debería estar vacío." ));
-		
+		//actor.should(GivenWhenThen.seeThat(WebElementQuestion.the(ElColombianoPage.EMAIL), WebElementStateMatchers.containsText("Hola")).orComplainWith(CampoNoVacioException.class, "El campo no debería estar vacío." ));
 		actor.attemptsTo(Enter.theValue(Nombres.MARUJA.toString() ).into(ElColombianoPage.EMAIL));
 		actor.attemptsTo(Enter.theValue( tablaInfo.get(0).getConfirmar_email().trim() ).into(ElColombianoPage.CONFIRMACION_CORREO));
 		actor.attemptsTo(Enter.theValue( tablaInfo.get(0).getPassword().trim()  ).into(ElColombianoPage.PASSWORD));
@@ -42,13 +35,9 @@ public class Diligenciamiento implements Task{
 //		actor.attemptsTo(Enter.theValue( tablaInfo.get(0).get(5).toString().trim()  ).into(ElColombianoPage.NOMBRES));
 //		actor.attemptsTo(Enter.theValue( tablaInfo.get(0).get(6).toString().trim()  ).into(ElColombianoPage.APELLIDOS));
 		actor.attemptsTo(Click.on(ElColombianoPage.TIPO_DOCUMENTO));
-		actor.attemptsTo(WaitUntil.the(ElColombianoPage.BOTON_ACEPTAR, isVisible()).forNoMoreThan(10).seconds());
-		
+		//actor.attemptsTo(WaitUntil.the(ElColombianoPage.BOTON_ACEPTAR, isVisible()).forNoMoreThan(10).seconds());
+	
 		//enumsPrueba(Nombres.MARUJA);
-		
-		
-		
-		
 		
 //		ElColombianoPage.TIPO_DOCUMENTO.resolveFor(actor).selectByVisibleText(tablaInfo.get(0).get(7).toString().trim());
 //		//actor.attemptsTo(new SelectByVisibleTextFromTarget(ElColombianoPage.TIPO_DOCUMENTO, tablaInfo.get(0).get(7).toString().trim() ));
@@ -57,14 +46,11 @@ public class Diligenciamiento implements Task{
 //		actor.attemptsTo(Enter.theValue( tablaInfo.get(0).get(9).toString().trim()  ).into(ElColombianoPage.FECHA_NACIMIENTO));
 //		//actor.attemptsTo(Enter.theValue( tablaInfo.get(0).get(10).toString().trim()  ).into(ElColombianoPage.GENERO));
 //		
-		 actor.attemptsTo(Check.whether(tablaInfo.get(0).getGenero().toString().trim().equals("Masculino")).
+		 actor.attemptsTo(Check.whether(tablaInfo.get(Posicion.CERO.getPos()).getGenero().toString().trim().equals("Masculino")).
 				 andIfSo(Click.on(ElColombianoPage.GENERO_MASCULINO), 
 						 Click.on(ElColombianoPage.GENERO_FEMENINO),
 						 Click.on(ElColombianoPage.GENERO_MASCULINO)).
 				 otherwise(Click.on(ElColombianoPage.GENERO_FEMENINO)));
-		 
-		 
-		
 		 
 		 
 		//actor.can(BrowseTheWeb.as(actor).evaluateJavascript("arguments[0].click()",ElColombianoPage.GENERO_FEMENINO.resolveFor(actor) ));  
