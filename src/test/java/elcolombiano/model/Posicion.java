@@ -1,7 +1,8 @@
 package elcolombiano.model;
 
 public enum Posicion {
-	CERO(0);
+	CERO(0),
+	UNO(1);
 	private int pos;
 	
 	Posicion(int pos)

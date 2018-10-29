@@ -10,6 +10,7 @@ import cucumber.api.java.en.When;
 import elcolombiano.model.Diligenciar;
 import elcolombiano.model.UsuarioColombiano;
 import elcolombiano.task.Ingresar;
+import net.serenitybdd.screenplay.actors.OnStage;
 
 public class ElColombianoDefinition {
 	
@@ -21,7 +22,9 @@ public class ElColombianoDefinition {
 	
 	@When("^(.*) se registra en la pagina de el colombiano$")
 	public void rafaSeRegistraEnLaPaginaDeElColombiano(String rafa, List<UsuarioColombiano> laTabla){			
-		theActorCalled(rafa).attemptsTo(Diligenciar.elFormulario().con(laTabla));
+		//theActorCalled(rafa).attemptsTo(Diligenciar.elFormulario().con(laTabla));
+		
+		OnStage.theActorInTheSpotlight().attemptsTo(Diligenciar.elFormulario().con(laTabla));
 	}
 
 	@Then("^verifica que ingresó exitosamente viendo en pantalla (.*)$")
