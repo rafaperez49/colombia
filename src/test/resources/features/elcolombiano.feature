@@ -17,4 +17,3 @@ Feature: Title of your feature
     ##@externaldata@./src/test/resources/Datadriven/DatadrivenElCol.xlsx@Hoja1 
    |rafaperez@gmail.com   |rafaperez@gmail.com   |carriles   |carriles   |elerreperez   |Rafael   |Pérez   |Cédula de ciudadanía   |111184356   |"9/11/1989"   |Femenino   |3005508906   |7274760   |Avenida siempre viva -123   |Albania   |Primaria   |Antioquia   |Mezclador   |Medellin|
    |rafaperezzzz@gmail.com   |rafaperezzzz@gmail.com   |carriles   |carriles   |elerreperez   |Rafael   |Pérez   |Cédula de ciudadanía   |111184357   |"9/11/1989"   |Masculino   |3005508906   |7274760   |Avenida siempre viva -123   |Albania   |Primaria   |Antioquia   |Mezclador   |Medellin|
- 

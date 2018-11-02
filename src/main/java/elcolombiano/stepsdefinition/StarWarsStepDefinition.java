@@ -21,6 +21,5 @@ public class StarWarsStepDefinition {
 	@Entonces("^verifica que el nombre sea (.*)$")
 	public void verifica_que_el_nombre_sea_Luke_SkyWalker(String personaje) {
 		theActorInTheSpotlight().should(seeThat(LaApi.trajoRespuesta(), equalTo(personaje)));		
-	}
-	
+	}	
 }

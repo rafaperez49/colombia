@@ -16,7 +16,6 @@ public class Diligenciamiento implements Task{
 
 	private List<UsuarioColombiano> tablaInfo;
 	
-	
 	public Diligenciamiento( List<UsuarioColombiano> tablaInfo) {
 		this.tablaInfo = tablaInfo;
 	}
@@ -24,7 +23,8 @@ public class Diligenciamiento implements Task{
 
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-	
+		
+		 
 		//actor.attemptsTo(Enter.theValue( tablaInfo.get(0).getEmail().trim() ).into(ElColombianoPage.EMAIL));
 		//actor.should(GivenWhenThen.seeThat(WebElementQuestion.the(ElColombianoPage.EMAIL), WebElementStateMatchers.containsText("Hola")).orComplainWith(CampoNoVacioException.class, "El campo no debería estar vacío." ));
 		actor.attemptsTo(Enter.theValue(Nombres.MARUJA.toString() ).into(ElColombianoPage.EMAIL));
